@@ -9,19 +9,19 @@ import com.example.lwp.mvp.data.api.ApiServiceModule;
 /**
  * Created by clevo on 2015/6/9.
  */
-public class AppApplication  extends Application{
+public class AppApplication extends Application {
 
     private AppComponent appComponent;
 
 
-    public static AppApplication get(Context context){
-        return (AppApplication)context.getApplicationContext();
+    public static AppApplication get(Context context) {
+        return (AppApplication) context.getApplicationContext();
     }
 
     @Override
     public void onCreate() {
         super.onCreate();
-        appComponent=DaggerAppComponent.builder()
+        appComponent = DaggerAppComponent.builder()
                 .appModule(new AppModule(this))
                 .apiServiceModule(new ApiServiceModule())
                 .appServiceModule(new AppServiceModule())
