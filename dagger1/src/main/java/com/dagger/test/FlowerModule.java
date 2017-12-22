@@ -12,13 +12,13 @@ import dagger.Provides;
 @Module
 public class FlowerModule {
     @Provides
-    @Named("rose")
+    @RoseFlower
     Flower provideRose() {
         return new Rose();
     }
 
     @Provides
-    @Named("peony")
+    @PenoyFlower
     Flower providePeony() {
         return new Peony();
     }
