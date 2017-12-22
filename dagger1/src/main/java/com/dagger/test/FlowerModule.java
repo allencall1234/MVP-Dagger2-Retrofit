@@ -1,5 +1,7 @@
 package com.dagger.test;
 
+import javax.inject.Named;
+
 import dagger.Module;
 import dagger.Provides;
 
@@ -10,7 +12,14 @@ import dagger.Provides;
 @Module
 public class FlowerModule {
     @Provides
-    Flower provideFlower() {
+    @Named("rose")
+    Flower provideRose() {
         return new Rose();
+    }
+
+    @Provides
+    @Named("peony")
+    Flower providePeony() {
+        return new Peony();
     }
 }
