@@ -3,14 +3,15 @@ package com.dagger.test;
 import javax.inject.Inject;
 
 /**
- * Created by 524202 on 2017/12/21.
+ * Created by 524202 on 2017/12/22.
  */
 
-public class Rose extends Flower {
+public class Rose {
 
-    @Inject public Rose(){}
+    @Inject
+    public Rose() {
+    }
 
-    @Override
     public String whisper() {
         return "热恋";
     }

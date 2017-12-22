@@ -7,8 +7,8 @@ import android.widget.Toast;
 
 import javax.inject.Inject;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,27 +16,20 @@ public class MainActivity extends AppCompatActivity {
     Pot pot;
 
     @Inject
-    Pot pot1;
+    Rose rose;
 
-
-    @InjectView(R.id.textview)
+    @Bind(R.id.textview)
     TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
-        DaggerMainActivityComponent.builder()
-                .potComponent(DaggerPotComponent.builder()
-                        .flowerComponent(DaggerFlowerComponent.create())
-                        .build())
-                .build()
-                .inject(this);
+        DaggerMainActivityComponent.create().inject(this);
 
         Toast.makeText(this, pot.show(), Toast.LENGTH_SHORT).show();
-
-        textView.setText(pot.hashCode() + "\n" + pot1.hashCode());
+        textView.setText(rose.whisper());
     }
 }
