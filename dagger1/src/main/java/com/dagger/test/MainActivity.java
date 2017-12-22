@@ -24,7 +24,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        DaggerMainActivityComponent.create().inject(this);
+        DaggerMainActivityComponent.builder().potComponent(
+                DaggerPotComponent.builder().flowerComponent(
+                        DaggerFlowerComponent.create()
+                ).build()
+        ).build().inject(this);
+
 
         Toast.makeText(this, pot.show(), Toast.LENGTH_SHORT).show();
     }

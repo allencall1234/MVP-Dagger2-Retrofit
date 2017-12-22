@@ -10,7 +10,6 @@ public class Pot {
 
     private Flower flower;
 
-    @Inject
     public Pot(Flower flower) {
         this.flower = flower;
     }
