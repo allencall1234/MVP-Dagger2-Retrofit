@@ -1,1 +1,1 @@
-include ':app', ':dagger1'
+include ':app', ':dagger1', ':mvpframe'

@@ -1,5 +1,7 @@
 package com.dagger.test;
 
+import javax.inject.Singleton;
+
 import dagger.Module;
 import dagger.Provides;
 
@@ -9,6 +11,7 @@ import dagger.Provides;
 @Module
 public class PotModule {
     @Provides
+    @Singleton
     Pot providePot(@PeonyFlower Flower flower) {
         return new Pot(flower);
     }

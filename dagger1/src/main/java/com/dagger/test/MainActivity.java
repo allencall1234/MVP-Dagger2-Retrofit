@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     Pot pot;
 
     @Inject
-    Rose rose;
+    Pot pot1;
 
 
     @InjectView(R.id.textview)
@@ -37,6 +37,6 @@ public class MainActivity extends AppCompatActivity {
 
         Toast.makeText(this, pot.show(), Toast.LENGTH_SHORT).show();
 
-        textView.setText(rose.whisper());
+        textView.setText(pot.hashCode() + "\n" + pot1.hashCode());
     }
 }
