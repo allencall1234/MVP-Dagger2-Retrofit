@@ -8,14 +8,14 @@ import javax.inject.Inject;
 
 public class Pot {
 
-    private Rose rose;
+    private Flower flower;
 
     @Inject
-    public Pot(Rose flower) {
-        this.rose = flower;
+    public Pot(Flower flower) {
+        this.flower = flower;
     }
 
     public String show() {
-        return rose.whisper();
+        return flower.whisper();
     }
 }

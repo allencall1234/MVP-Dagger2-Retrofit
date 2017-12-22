@@ -15,9 +15,6 @@ public class MainActivity extends AppCompatActivity {
     @Inject
     Pot pot;
 
-    @Inject
-    Rose rose;
-
     @Bind(R.id.textview)
     TextView textView;
 
@@ -30,6 +27,5 @@ public class MainActivity extends AppCompatActivity {
         DaggerMainActivityComponent.create().inject(this);
 
         Toast.makeText(this, pot.show(), Toast.LENGTH_SHORT).show();
-        textView.setText(rose.whisper());
     }
 }
