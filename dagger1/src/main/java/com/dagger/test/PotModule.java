@@ -1,16 +1,26 @@
 package com.dagger.test;
 
+import javax.inject.Singleton;
+
 import dagger.Module;
 import dagger.Provides;
 
-/**
- * Created by 524202 on 2017/12/22.
- */
-
 @Module
 public class PotModule {
+
+
     @Provides
-    Pot providePot(@PenoyFlower Flower flower){
+    @Singleton
+    @LilyFlower
+    Pot provideLily(@LilyFlower Flower flower) {
         return new Pot(flower);
     }
+
+    @Provides
+    @Singleton
+    @RoseFlower
+    Pot provideRose(@RoseFlower Flower flower) {
+        return new Pot(flower);
+    }
+
 }

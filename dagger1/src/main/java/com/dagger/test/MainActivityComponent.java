@@ -5,7 +5,8 @@ import dagger.Component;
 /**
  * Created by 524202 on 2017/12/21.
  */
+@ActivityScope
 @Component(dependencies = PotComponent.class)
 public interface MainActivityComponent {
-    void inject(MainActivity activity);
+    void bind(MainActivity activity);
 }
