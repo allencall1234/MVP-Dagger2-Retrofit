@@ -1,5 +1,6 @@
 package com.dagger.test;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -30,12 +31,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         DaggerMainActivityComponent.builder()
-                .potComponent(DaggerPotComponent.builder()
-                        .flowerComponent(DaggerFlowerComponent.create())
-                        .build())
+                .potComponent(((App) getApplication()).getPotComponent())
                 .build().bind(this);
         Toast.makeText(this, lily.show() + ":" + rose.show(), Toast.LENGTH_SHORT).show();
         Log.d("MainActivity", "Lily = " + lily + ",Lily2 = " + lily2);
         Log.d("MainActivity", "Rose = " + rose + ",Rose2 = " + rose2);
+
+        startActivity(new Intent(this, SecondActivity.class));
     }
 }
