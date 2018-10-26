@@ -1,7 +1,5 @@
 package com.dagger.test;
 
-import javax.inject.Inject;
-
 public class LiLy extends Flower {
 
     @Override

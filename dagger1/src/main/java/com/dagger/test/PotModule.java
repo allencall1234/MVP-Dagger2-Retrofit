@@ -11,6 +11,7 @@ public class PotModule {
 
     @Provides
     @LilyFlower
+    @Singleton
     Pot provideLily(@LilyFlower Flower flower) {
         return new Pot(flower);
     }
